@@ -5,4 +5,4 @@ SELECT * FROM restaurants;
 ```
 
 **screenshot**
-![alt text](image.png)
+
