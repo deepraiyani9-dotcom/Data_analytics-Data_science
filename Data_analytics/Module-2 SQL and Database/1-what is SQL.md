@@ -273,3 +273,88 @@
   update table set cname='japan',cwork='export',ccapital='tokyo' where cid=1;
   
   '''
+## DQL : data query language
+
+  1. dql is handle to select all data from tables
+  2.dql is handle to fetch all data from tables
+  3. dql is handle particular fetch data from tables
+  4. dql is handle particular range of data from tables
+  5. dql is handle particular fetch alternate data from tables
+  6. dql is handle particular fetch limit or data from tables
+
+  **query in DQL**
+
+  select
+
+  1. how to select all data 
+    SELECT* FROM PRODUCTS;
+  2. select paricular data from id or name
+    select * from products where impid=1;
+    or 
+    select * from products where name='deep' ;
+
+  3. select particular data from columns 
+    select name,mail,phonenumber from employee;
+
+  4. select praticular column of one data 
+      select name,mail,phonenumber from employee WHERE  name ='deep' ;
+ 
+  5. select paricu;ar range of data
+      select * from employee where impid between 3 and 8 ;
+  
+  6. select particular or alternate data 
+       select * from employee where impid in(3,5,7,8) ;
+       or
+       select * from employee where impid in('deep','astha','punit') ;
+        or
+        select * from employee where impid in('deep','astha','punit') order by name desc ;
+        or
+        select * from employee where impid in('deep','astha','punit') order by name ;
+        or
+        select * from employee where impid in('deep','astha','punit') order by name asc ;
+        
+  7. select data using limit
+     
+     select * from emloyee where impid limit 0,5 ;
+     or
+    select * from emloyee where impid limit 2,6 ; 
+    (note: where 2 was off set which means start from next 3 and goes to next 6 it's print total empid 3,4,5,6,7,8)
+  
+8.select or filter data using **order by**
+
+  select *  from employee  order by name desc ;
+  select *  from employee  order by name asc ;  
+
+9. group by
+
+    select sum(salary) as sum_od_salary,department from employee group by department;
+
+## sql function
+
+1. sql function is used to pre-defiend function
+
+types of function
+
+1.aggrigate function
+2.scaler function
+
+  # aggrigate function
+
+    1. sum()
+    2. avg()
+    3. count()
+    4. max()
+    5. min()
+
+  # scalar function 
+  
+    1. upper()
+    2. lower()
+    3. length()
+    4. round()
+    5. now()
+    6. date() 
+    7. first()
+    8. last()
+    
+      
