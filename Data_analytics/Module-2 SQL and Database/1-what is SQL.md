@@ -348,13 +348,70 @@ types of function
 
   # scalar function 
   
-    1. upper()
-    2. lower()
+    1. ucase()
+    2. lcase()
     3. length()
     4. round()
     5. now()
     6. date() 
     7. first()
     8. last()
-    
-      
+
+
+  # sum() :
+
+    select sum(salary) as sum_of_salary from employees;
+    or
+    select sum(salary),department from employees group by department;
+  
+  # avg() : 
+  
+    select avg(salary) as average_salary from employees;
+
+  # count() :
+  
+    select count(name) as total_employee from employees;
+    or
+    select count(name),department from employees group by department;
+
+  # max() : 
+  
+    select max(salary) as max_salary from employees;
+    or
+    select max(salary),department from employees group by department;
+
+  # min () :
+   
+    select min(salary) as min_salary from employees;
+    or
+    select min(salary),department from employees group by department;
+  
+  # find ther second  highest salary  ** using subquery method **
+
+    **subquery**
+      1.subquery used within another query.
+
+     select max(salary) from employees where salary < (select max(salary) from table employee);
+     or
+     select * from employees group by salary DESC limit 1,1;
+
+  # first() : the row find furst in column
+
+    select first(empid) from employees;
+
+# what is like operator in sql ?
+# like operator :
+
+  1. like operator is used to search data from tables with keyword.
+  2. like operstor is using for search using its wildcard (%).
+
+   ## start cheracter  with d
+
+    select * from employees where name like '%d';
+    or
+    select * from employees where name like 'h%';
+
+    ## find anywhere in name
+
+    select * from employees where name like '%a%';
+
