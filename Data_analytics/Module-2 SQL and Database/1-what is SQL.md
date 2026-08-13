@@ -395,7 +395,7 @@ types of function
      or
      select * from employees group by salary DESC limit 1,1;
 
-  # first() : the row find furst in column
+  # first() : the row find first in column
 
     select first(empid) from employees;
 
@@ -415,3 +415,94 @@ types of function
 
     select * from employees where name like '%a%';
 
+
+  ## key constraints in sql 
+
+    1. key constraints provide limit on tables.
+    2. key constraints used to set primary key | unique key | foriegn key on tables
+    3. key constraints provides limitation on tables
+    4. key constraints provides relationship b/w tables
+
+    ## types of key constraints
+
+    1. primary key
+    2. unique key
+    3. foreign key
+
+    ## primary key ?
+
+    1. A pk only provides one time in a column
+    2. s pk nevers repetednmore than one times
+    3. a pk stored unique values and never return null value
+    4. a pk should always be auto_increment 
+
+    **users** 
+
+    | uid(pk)  |    uname   |    age  |    address |   compsnt |
+    |----------|------------|---------|------------|-----------|
+    |   1      |    brijesh |  40     | rjt        |   tops    |
+    |   2      |    deep    |  20     | vadodara   |   abtik   |
+    |   3      |    tejas   |  21     | ahm        |   shreeja |
+
+
+     ## unique key ?
+
+    1. A uk provides more than one time in tables 
+    2. a uk repetaed more  than one times in tables
+    3. a uk stored unique values and return one times a null value
+    4. a uk never return dulpicte values
+
+    **users** 
+    
+    | uid(pk)  |    uname   |    age  |    address |   compony | phone(uk)|
+    |----------|------------|---------|------------|-----------|----------|
+    |   1      |    brijesh |  40     | rjt        |   tops    |9876543210|
+    |   2      |    deep    |  20     | vadodara   |   abtik   |123467890 |
+    |   3      |    tejas   |  21     | ahm        |   shreeja |4569871233|
+
+
+    ## foriegn key ?
+
+    1. A fk provides more than one time in tables 
+    2. a fk repetaed more  than one times in tables
+    3. a fk  stored duplicate value also
+    4. a fk provides relation b/w tables with common field
+
+    **country**
+
+    |cid(pk)|  cname  |
+    |-------|---------|
+    |  1    |  india  |
+    |  2    |  japan  |
+    |  3    |  usa    |
+    |  4    | china   |
+    **via sql**
+    CREATE TABLE country (
+    cid INT PRIMARY KEY AUTO_INCREMENT,
+    cname VARCHAR(100) NOT NULL
+);
+
+    **users** 
+    
+    | uid(pk)  |    uname   |    age  |    address |   compony | phone(uk)|cid|
+    |----------|------------|---------|------------|-----------|----------|---|
+    |   1      |    brijesh |  40     | rjt        |   tops    |9876543210|1  |
+    |   2      |    deep    |  20     | vadodara   |   abtik   |123467890 |2  |
+    |   3      |    tejas   |  21     | ahm        |   shreeja |4569871233|3  |
+
+    **via sql**
+    CREATE TABLE tbl_users (
+    uid INT PRIMARY KEY AUTO_INCREMENT,
+    uname VARCHAR(100) NOT NULL,
+    age INT,
+    address VARCHAR(255),
+    compony VARCHAR(100),
+    phone VARCHAR(15),
+    cid INT,
+    FOREIGN KEY (cid) REFERENCES country(cid)
+);
+
+
+# sql join ?
+
+1. join
