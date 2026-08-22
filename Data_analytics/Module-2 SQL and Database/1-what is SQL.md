@@ -45,6 +45,7 @@
     
   ## how create table ?
       **create a table chart for datatype size**
+        ```
         | columnname             | datatype(size)        |
         |------------------------|-----------------------|
         |id(pk) auto_increment   | int (defualt size 11) |            
@@ -56,8 +57,8 @@
         |salary,price            | int,float,money       |
         |phone                   | int,bigInt(by default 20) |  
         |default datatime        |timestamp                 |   
-        |address ,message        | text                  |
-     '''
+        | boolean                | true / false          |
+     ```
       syntex : create table tablename
       (
         id int auto_increment primary key,
@@ -124,11 +125,11 @@
 
    alter table tablename add columnname datatypea(size)
    or
-  alter  table users add gender varchar(255);
+   alter  table users add gender varchar(255);
 
     ## add columnname specific column
 
-      alter table tabelname add columnname datatype(00) after columnname  
+      alter table tabelname add columnname datatype(255) after columnname  
 
     ## update any spicific column
 
@@ -192,10 +193,11 @@
       note :: multipul value insert kari tyre jo column name no lakho to null lakhvu padse or insert sathe column name lakho tyre aani value nakho to koy error no ave.
 
       insert into employee values (null,'deep','deep@gmail.com','deep123','26000','it')
+
   ## cretae a product tabke with  following fiels 
 
 
-
+```
   CREATE TABLE products 
 (
     pid int AUTO_INCREMENT PRIMARY KEY,
@@ -232,8 +234,8 @@
     updated_at timestamp default current_timestamp on update current_timestamp,
     manufacture_date date,
 )
-
-  ## delete data from tablea.
+```
+  ## delete data from table.
 
   ** syntex**
 
@@ -505,4 +507,6 @@ types of function
 
 # sql join ?
 
-1. join
+1. inner join
+2. outer jion
+3. 

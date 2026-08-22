@@ -10,6 +10,13 @@
  5. how to install MYSQLWorkbench and open it 
     ![alt text](image-2.png)  
 
+    '''
+    X - cross platform support all OS
+    A - apache server
+    M - mysql database
+    P - perl
+    P - php
+
 ## what is database ?
  1. databse stored an information about data in form of table called database
  2. database stored information called database
