@@ -14,7 +14,7 @@
 - A data is in excel | csv | tables i.e. called structered data 
     ** examples **
     '''
-        table | csv | excel etc..
+        table | csv(comma sepreted value) | excel etc..
     '''
     **example of table**
     **user**

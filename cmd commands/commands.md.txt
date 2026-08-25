@@ -1,0 +1,5 @@
+cmd some commands which know is important.
+
+mkdir -- make folder file 
+
+code .  -- in write cmd to you open that file in vs code.

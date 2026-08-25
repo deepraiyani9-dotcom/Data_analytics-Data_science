@@ -44,3 +44,8 @@
   3. git commit -m '14-07-2026 all data uploaded'
   4. git remote add origin https://github.com/Brijesh1990/data_analytics-data_science_930TTS.git
   5. git push -u origin master
+
+  ** how to clone a repository**
+
+  1. git clone [paste your github repositry link]
+  
