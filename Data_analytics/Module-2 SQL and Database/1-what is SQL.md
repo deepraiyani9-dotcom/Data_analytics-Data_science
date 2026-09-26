@@ -335,7 +335,7 @@
 
 1. sql function is used to pre-defiend function
 
-types of function
+types of function : function giving only temprory result when get out it's back
 
 1.aggrigate function
 2.scaler function
@@ -358,7 +358,16 @@ types of function
     6. date() 
     7. first()
     8. last()
+    9. concat()
+    10. replace
 
+  # replace() :
+
+    select replace("shall pass","deep","jeet") from 
+  
+  # concat() :
+
+    select concat(name,' ',address) as fullname from employees;  
 
   # sum() :
 
@@ -510,3 +519,15 @@ types of function
 1. inner join
 2. outer jion
 3. 
+
+
+
+# connect sql when we udate data in my sql commnity or sql databse   and  when you get update and insert it will change into excel.
+
+  -open excel blank workbook
+  -data
+  -get data
+  -from databse
+  -sql database 
+  -select table you want
+
