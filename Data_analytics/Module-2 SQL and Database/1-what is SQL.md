@@ -515,12 +515,207 @@ types of function : function giving only temprory result when get out it's back
 
 
 # sql join ?
+  1. sql join are used to join more than one field with common field
+  2. sql join are used to join table data from one tabes to anither tabkes with common field 
 
-1. inner join
-2. outer jion
-3. 
+1. join
+2. inner join
+3. outer jion
+    1. left outer join
+    2. right outer join
+    3.full outer join 
+4. cross join
 
 
+# what is SQL join  ?
+1. join are used to join more than one tables with common field 
+2. join are used to match data from one tables to another table if data matched join the tables otherwise return null values 
+
+**syntax**
+
+```
+select tbl1.*, columname from tbl1 join tbl2 on tbl1.commonfield=tbl2.commfield;
+or
+select tbl_salesman.*, depname from tbl_salesman join tbl_department on tbl_salesman.depid=tbl_department.depid;
+or
+
+select salesid, name, address , mobile,email , depname from tbl_salesman join tbl_department on tbl_salesman.depid=tbl_department.depid;
+``` 
+
+# types of JOin ? 
+
+1. join 
+2. inner join 
+3. outer join 
+   1. left outer join 
+   2. right outer join 
+   3. full outer join 
+4. cross join 
+5. self join 
+6. union join 
+
+# join :
+
+# inner join :
+
+1. iner join are used to join more than one tables with common field 
+2. inner join are used to match data from one tables to another table if data matched join the tables otherwise return null values 
+
+**syntax**
+
+```
+select tbl1.*, columname from tbl1 inner join tbl2 on tbl1.commonfield=tbl2.commfield;
+or
+select tbl_salesman.*, depname from tbl_salesman inner join tbl_department on tbl_salesman.depid=tbl_department.depid;
+or
+
+select salesid, name, address , mobile,email , depname from tbl_salesman inner join tbl_department on tbl_salesman.depid=tbl_department.depid;
+
+or
+select salesid, name, address , mobile,email , depname, compname from tbl_salesman inner join tbl_department on tbl_salesman.depid=tbl_department.depid inner join tbl_company on tbl_salesman.compid=tbl_company.compid;
+``` 
+
+
+# left join :
+
+1. left join are used to join more than one tables with common field 
+2. left join are used to join first table of left rows with second table of left rows if data matched from first table of left rows return all data of first table and join otherwise return null values.
+
+**syntax**
+
+```
+select tbl1.*, columname from tbl1 left join tbl2 on tbl1.commonfield=tbl2.commfield;
+or
+select tbl_salesman.*, depname from tbl_salesman left join tbl_department on tbl_salesman.depid=tbl_department.depid;
+or
+
+select salesid, name, address , mobile,email , depname from tbl_salesman left join tbl_department on tbl_salesman.depid=tbl_department.depid;
+
+or
+select salesid, name, address , mobile,email , depname, compname from tbl_salesman left join tbl_department on tbl_salesman.depid=tbl_department.depid left join tbl_company on tbl_salesman.compid=tbl_company.compid;
+
+``` 
+
+# right join :
+
+1. right join are used to join more than one tables with common field 
+2. right join are used to join second table of right rows with first table of right rows if data matched from second table of right rows return all data of second  table and join otherwise return null values.
+
+**syntax**
+
+```
+select tbl1.*, columname from tbl1 right join tbl2 on tbl1.commonfield=tbl2.commfield;
+or
+select tbl_salesman.*, depname from tbl_salesman right join tbl_department on tbl_salesman.depid=tbl_department.depid;
+or
+
+select salesid, name, address , mobile,email , depname from tbl_salesman right join tbl_department on tbl_salesman.depid=tbl_department.depid;
+
+or
+select salesid, name, address , mobile,email , depname, compname from tbl_salesman right join tbl_department on tbl_salesman.depid=tbl_department.depid right join tbl_company on tbl_salesman.compid=tbl_company.compid;
+
+``` 
+
+# full join : not dupported in mysql
+
+
+# cross join 
+
+1. cross join are used to join table with cross of data 
+2. cross join return dublicate data 
+
+**examples**
+```
+select * from tbl_salesman cross join tbl_department
+```
+
+# self join :
+
+1. self join are used to join itself 
+
+**examples**
+
+```
+select e.empid, e.name as employee_name , m.name as manager_name  from tbl_employee e inner join tbl_employee m on e.manager_id=m.empid; 
+
+```
+# union join :
+1. union join is combine of left join + right join 
+2. this is a solution of full join 
+
+**examples**
+
+```
+select tbl_salesman.*, depname from tbl_salesman left join tbl_department on tbl_salesman.depid=tbl_department.depid
+union 
+select tbl_salesman.*, depname from tbl_salesman right join tbl_department on tbl_salesman.depid=tbl_department.depid;
+
+```
+# what is SQL index or indexer ?
+
+1. SQL index or indexer create or used to improved speed of tables 
+2. SQL indexer is used to fast lookups or search data from tables 
+3. SQL indexer is also create fast speed optimization of tables 
+
+# types of indexer 
+1. **single indexer**
+
+  - when we create a indexer on single column that is called single indexer 
+  
+  **examples**
+  ```
+  create index tbl_products_index1 on tbl_products (pid);
+
+  ```
+2. **composit indexer** 
+  
+   
+  - when we create a indexer on more than one  columns that is called composit indexer 
+  
+  **examples**
+  ```
+  create index tbl_products_index2 on tbl_products (pid, pname, qty, price);
+
+  ```
+
+# what is SQL view  ?
+  
+1. create a SQL views for clone of a tables 
+2. create a SQL views for hide some data from some users there we create a clone of tables of view of table 
+3. create a View and when we changed in view main tables are effected 
+
+**examples**
+
+```
+create view view_tbl_customer as select * from tbl_customer;
+or
+create view view_tbl_customer as select * from tbl_customer where custid in (1,3,6);
+or 
+create view view_tbl_customer as select custid , name , password ,phone  from tbl_customer;
+or
+create view view_tbl_salesman as select * from tbl_salesman;
+```
+# what is SQL Case In or case when ?
+
+1. check a multiple case using case when 
+2. check a multiple case using case when and it is also check logic based case in tables
+3. filter logic based case data from tables used **case when**
+
+**examples**
+
+```
+select name , salary , case when salary >=75000 then 'Higher Earner'  when salary >=50000 then  'Medium Earner' else 'Lower salary' end as salary_earner from tbl_employee; 
+or
+select name , salary , case when salary >=75000 then 'Higher Earner'  when salary >=50000 then  'Medium Earner' else 'Lower salary' end as salary_earner from tbl_employee; 
+```
+
+# what is SQL trigger ?
+
+# what is SQL store procedure ?
+
+# what is SQL windows function  ?
+
+# what is SQL CTE (common table expression)?
 
 # connect sql when we udate data in my sql commnity or sql databse   and  when you get update and insert it will change into excel.
 
