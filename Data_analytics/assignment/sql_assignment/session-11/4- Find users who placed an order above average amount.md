@@ -8,4 +8,4 @@ WHERE total_amount > (
 );
 
 **screenshot**
-![alt text](image-2.png)
+![alt text](image-2.png)    
